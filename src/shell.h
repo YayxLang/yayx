@@ -3,6 +3,7 @@
 
 // Titles
 #define SHELL_ERROR_TITLE "ShellError"
+#define FILE_ERROR_TITLE "FileError"
 #define LEXER_ERROR_TITLE "LexerError"
 #define INTERPRETER_ERROR_TITLE "InterpreterError"
 #define PARSER_ERROR_TITLE "ParserError"
@@ -11,6 +12,7 @@
 #define ERROR_ARGS_MESSAGE "Invalid arguments..."
 #define ERROR_ARGS_MESSAGE_FILENAME "Invalid arguments... To run file must be given a filename"
 #define ERROR_FILE_NOT_FOUND "File not found!!!"
+#define ERROR_FILE_COULDNT_OPEN "File could not be open!!!"
 
 // Command Messages
 #define HELP_MESSAGE "=--=--=--=--=--=--=[ HELP ]=--=--=--=--=--=--=\n*\n"

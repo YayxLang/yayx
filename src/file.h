@@ -20,7 +20,24 @@ int file_exists(char* filename) {
 
 // Read file contents and return it
 char* read_file(char* filename) {
+    FILE* file = fopen(filename, "r");
+    char* valuefile;
+    int i = 0;
+    char buffer[255];
 
+    if (file == NULL) {
+        struct Error error_args_run = ece(ERROR_FILE_COULDNT_OPEN, FILE_ERROR_TITLE);
+        exit(0);
+    } else {
+        while (fgets(buffer, 255, file) != NULL) {
+            printf("%d", sizeof(valuefile));
+            // valuefile[sizeof(valuefile)/sizeof(valuefile[0])] = buffer;
+        }
+    }
+   
+    // printf("%s", valuefile);
+
+    fclose(file);
 }
 
 // Write into file content and return it value

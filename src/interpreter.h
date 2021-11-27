@@ -2,6 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-void interpreter_run() {
-
+void interpreter_run(char* filename) {
+    read_file(filename);
 }
