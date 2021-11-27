@@ -22,3 +22,13 @@ char* appendchar(char* str, char* toappend) {
 
     printf("%s", toreturn);
 }
+
+int arraylen(char** array, size_t len) {
+    int i = 0;
+
+    for (size_t i = 0; i < len; i++) {
+
+    }
+
+    return i;
+}
