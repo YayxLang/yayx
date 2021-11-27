@@ -9,6 +9,8 @@
 
 // Messages
 #define ERROR_ARGS_MESSAGE "Invalid arguments..."
+#define ERROR_ARGS_MESSAGE_FILENAME "Invalid arguments... To run file must be given a filename"
+#define ERROR_FILE_NOT_FOUND "File not found!!!"
 
 // Command Messages
 #define HELP_MESSAGE "=--=--=--=--=--=--=[ HELP ]=--=--=--=--=--=--=\n*\n"
