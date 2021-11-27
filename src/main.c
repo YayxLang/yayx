@@ -6,6 +6,7 @@
 #include "shell.h"
 #include "file.h"
 #include "console.h"
+#include "Lexer/lexer.h"
 #include "interpreter.h"
 #include "Lexer/token.h"
 #include "char.h"

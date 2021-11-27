@@ -3,5 +3,7 @@
 #include <string.h>
 
 void interpreter_run(char* filename) {
-    char** val = read_file(filename);
+    struct filereadreturn val = read_file(filename);
+    
+    lexer(val.line, val.linesCount);
 }

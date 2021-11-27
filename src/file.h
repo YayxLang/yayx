@@ -21,8 +21,13 @@ int file_exists(char* filename) {
     return return_state;
 }
 
+struct filereadreturn {
+    char** line;
+    int linesCount;
+} filereadreturn;
+
 // Read file contents and return it
-char** read_file(char* filename) {
+struct filereadreturn read_file(char* filename) {
     FILE* file = fopen(filename, "r");
     char** line;
     int k = 0;
@@ -32,10 +37,14 @@ char** read_file(char* filename) {
         line[k][strlen(line[k])-1] = '\0';
         k++;
     }
-
+    printf("%d", k);
     fclose(file);
 
-    return line;
+    struct filereadreturn returnstuctor;
+    returnstuctor.line = line;
+    returnstuctor.linesCount = k;
+
+    return returnstuctor;
 }
 
 // Write into file content and return it value
