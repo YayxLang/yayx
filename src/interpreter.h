@@ -3,5 +3,5 @@
 #include <string.h>
 
 void interpreter_run(char* filename) {
-    read_file(filename);
+    char** val = read_file(filename);
 }
