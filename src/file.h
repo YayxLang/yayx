@@ -24,21 +24,16 @@ int file_exists(char* filename) {
 // Read file contents and return it
 char** read_file(char* filename) {
     FILE* file = fopen(filename, "r");
-    char line[M2]*;
+    char** line;
     int k = 0;
     int no = 0;
 
-    if (file == NULL) {
-        struct Error error_args_run = ece(ERROR_FILE_COULDNT_OPEN, FILE_ERROR_TITLE);
-        exit(0);
-    } else {
-        while (fgets(line[k], M1, file)) {
-            line[k][strlen(line[k])-1] = '\0';
-            k++;
-        }
-
-        fclose(file);
+    while (fgets(line[k], M1, file)) {
+        line[k][strlen(line[k])-1] = '\0';
+        k++;
     }
+
+    fclose(file);
 
     return line;
 }

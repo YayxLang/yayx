@@ -7,6 +7,7 @@
 #include "file.h"
 #include "console.h"
 #include "interpreter.h"
+#include "Lexer/token.h"
 #include "char.h"
 
 // Main entry point of the application
