@@ -5,6 +5,18 @@ import (
 	"strings"
 )
 
+func getLastToken(token [] Token) Token {
+	returntoken := createToken(NIL, NIL, 0)
+
+	if len(token) == 0 {
+		returntoken = createToken(NIL, NIL, 0)
+	} else {
+		returntoken = token[len(token) - 1]
+	}
+
+	return returntoken
+}
+
 // Lexer function
 func lexer(value string) {
 	var currentChar string = ""
@@ -26,7 +38,22 @@ func lexer(value string) {
 		} else if strings.ContainsAny(CONSTANTS_LETTER, currentChar) {
 
 		} else if strings.ContainsAny(CONSTANTS_NUMBER, currentChar) {
+			lastToken := getLastToken(token)
 
+			if lastToken.Type == NIL {
+				token = append(token, createToken(INT, currentChar, i))
+			} else {
+				if lastToken.Type == INT || lastToken.Type == FLOAT {
+					if lastToken.Type == INT {
+						lastToken.Value += currentChar
+					} else {
+						lastToken.Value += currentChar
+					}
+				} else {
+					token = append(token, createToken(INT, currentChar, i))
+				}
+
+			}
 		} else if currentChar == PLUS {
 			token = append(token, createToken(TOKENNAME_PLUS, PLUS, i))
 		} else if currentChar == MINUS {
@@ -50,7 +77,12 @@ func lexer(value string) {
 
 			if lastToken.Type == INT || lastToken.Type == FLOAT {
 				if lastToken.Type == INT {
-
+					if currentChar == DOT {
+						lastToken.Type = FLOAT
+						lastToken.Value += currentChar
+					} else {
+						lastToken.Value += currentChar
+					}
 				} else {
 					if currentChar == DOT {
 						if strings.ContainsAny(lastToken.Value, DOT) == true {

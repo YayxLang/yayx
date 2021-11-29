@@ -55,6 +55,7 @@ const (
 	STRING     = "String"
 	INT        = "Integer"
 	FLOAT      = "Float64"
+	NIL        = "Null"
 )
 
 const (
