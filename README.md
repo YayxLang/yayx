@@ -2,7 +2,7 @@
 Yayx programming language i will try to write a interpreter in C 
 
 # Directory Tree
-- **src** -> Source code off interpreter
+- **src** -> Source code of our two interpreters more in [README](https://github.com/SolindekDev/yayx/tree/main/src)
 - **.vscode** -> Files for visual studio code 
 - **builder** -> A little builder of interpreter (soon update)
 - **std** -> A source code of std library

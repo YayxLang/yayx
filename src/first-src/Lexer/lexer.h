@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void lexer(char** valuefile, int linesCount) {
+void lexer(char valuefile[M2][M1], int linesCount) {
     char currentCharacter;
     struct Token* tokens;
     int space = 0;

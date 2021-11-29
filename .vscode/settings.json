@@ -1,6 +1,10 @@
 {
     "files.associations": {
         "stdio.h": "c",
-        "char.h": "c"
+        "char.h": "c",
+        "interpreter.h": "c",
+        "console.h": "c",
+        "file.h": "c",
+        "string.h": "c"
     }
 }

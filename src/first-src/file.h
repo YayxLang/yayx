@@ -2,8 +2,8 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define M1 2048
-#define M2 2048
+#define M1 130
+#define M2 20
 
 // Is file exists?
 // Returns 0 or 1 (0 - Not exists | 1 - File exists)
@@ -22,29 +22,35 @@ int file_exists(char* filename) {
 }
 
 struct filereadreturn {
-    char** line;
+    char line[M2][M1];
     int linesCount;
 } filereadreturn;
 
 // Read file contents and return it
-struct filereadreturn read_file(char* filename) {
+void read_file(char* filename) {
     FILE* file = fopen(filename, "r");
-    char** line;
+    char line[M2][M1];
     int k = 0;
     int no = 0;
+
+    if (file == NULL) {
+        ece(ERROR_FILE_COULDNT_OPEN, FILE_ERROR_TITLE);
+        exit(0);
+    }
 
     while (fgets(line[k], M1, file)) {
         line[k][strlen(line[k])-1] = '\0';
         k++;
     }
-    printf("%d", k);
+    
+
     fclose(file);
 
-    struct filereadreturn returnstuctor;
-    returnstuctor.line = line;
-    returnstuctor.linesCount = k;
+    // struct filereadreturn returnstuctor;
+    // returnstuctor.line = line;
+    // returnstuctor.linesCount = k;
 
-    return returnstuctor;
+    // return returnstuctor;
 }
 
 // Write into file content and return it value
