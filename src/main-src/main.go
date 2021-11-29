@@ -7,6 +7,9 @@ import (
 func main() {
 	argv := os.Args
 
+	// Repaire ansii.
+	Init()
+
 	if len(argv) >= 2 {
 		if argv[1] == "--help" || argv[1] == "help" || argv[1] == "--h" || argv[1] == "-help" || argv[1] == "-h" {
 			shell_help()

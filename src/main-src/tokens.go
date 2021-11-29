@@ -54,15 +54,16 @@ const (
 	IDENTIFIER = "Identifier"
 	STRING     = "String"
 	INT        = "Integer"
+	FLOAT      = "Float64"
 )
 
 const (
 	// Operators
-	TOKENNAME_PLUS  = "+"
-	TOKENNAME_MINUS = "-"
-	TOKENNAME_MUL   = "*"
-	TOKENNAME_DIV   = "/"
-	TOKENNAME_BANG  = "!"
+	TOKENNAME_PLUS  = "Plus"
+	TOKENNAME_MINUS = "Minus"
+	TOKENNAME_MUL   = "Multiply"
+	TOKENNAME_DIV   = "Divide"
+	TOKENNAME_BANG  = "Bang"
 
 	// Logical Operators
 	TOKENNAME_GT  = "GT"
@@ -89,4 +90,9 @@ const (
 	TOKENNAME_COMMA   = "COMMA"
 	TOKENNAME_DOT     = "DOT"
 	TOKENNAME_SEMICOL = "SEMICOL"
+)
+
+const (
+	CONSTANTS_LETTER = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
+	CONSTANTS_NUMBER = "0123456789"
 )

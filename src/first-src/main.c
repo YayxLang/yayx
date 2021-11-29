@@ -9,7 +9,6 @@
 #include "Lexer/lexer.h"
 #include "interpreter.h"
 #include "Lexer/token.h"
-#include "char.h"
 
 // Main entry point of the application
 int main(int argc, char **argv) {

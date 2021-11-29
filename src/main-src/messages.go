@@ -19,6 +19,7 @@ const (
 	ERROR_ARGS_MESSAGE_FILENAME = "Invalid arguments... To run file must be given a filename"
 	ERROR_FILE_NOT_FOUND        = "File not found!!!"
 	ERROR_FILE_COULDNT_OPEN     = "File could not be open!!!"
+	ERROR_LEXER_FLOAT_DOT       = "Float has already '.' inside of it!"
 
 	// Command Messages
 	HELP_MESSAGE    = "=--=--=--=--=--=--=[ HELP ]=--=--=--=--=--=--=\n*\n"
