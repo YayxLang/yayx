@@ -1,5 +1,5 @@
 # Yayx
-Yayx programming language i will try to write a interpreter in C 
+Yayx programming language i will try to write a interpreter in GoLang
 
 # Directory Tree
 - **src** -> Source code of our two interpreters more in [README](https://github.com/SolindekDev/yayx/tree/main/src)
@@ -10,4 +10,3 @@ Yayx programming language i will try to write a interpreter in C
 
 # Helped me
 - With writing the interpreter so help me [cpython repo](https://github.com/python/cpython) and [comet repo](https://github.com/chermehdi/comet)
-- I'm starting with C Programming Language so with writing code helped me [Lemon](https://github.com/lemon-sh/) and [Klapouch](https://github.com/klapouch).. Thanks a lot guys
