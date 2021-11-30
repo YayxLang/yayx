@@ -47,6 +47,7 @@ const (
 
 	// Seperators
 	COMMA   = ","
+	COLON   = ":"
 	DOT     = "."
 	SEMICOL = ";"
 
@@ -90,6 +91,7 @@ const (
 	// Seperators
 	TOKENNAME_COMMA   = "COMMA"
 	TOKENNAME_DOT     = "DOT"
+	TOKENNAME_COLON   = "COLON"
 	TOKENNAME_SEMICOL = "SEMICOL"
 )
 

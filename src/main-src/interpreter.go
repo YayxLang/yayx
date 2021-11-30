@@ -1,7 +1,5 @@
 package main
 
-func interpreter_run(filename string) {
-	value := read_file(filename)
-
+func interpreter_run(value string) {
 	lexer(value)
 }

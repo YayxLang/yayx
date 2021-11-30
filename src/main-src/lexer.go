@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"strings"
 )
 
@@ -52,6 +53,8 @@ func lexer(value string) {
 			if lastToken.Type == NIL {
 				token = append(token, createToken(currentChar, IDENTIFIER, i))
 			} else {
+				// Space working
+				//fmt.Println(strconv.Itoa(space) + " | " + colorPurple + currentChar + colorReset)
 				if space == 0 {
 					if lastToken.Type == IDENTIFIER {
 						token[len(token)-1].Value += currentChar
@@ -80,6 +83,8 @@ func lexer(value string) {
 			}
 		} else if currentChar == PLUS {
 			token = append(token, createToken(PLUS, TOKENNAME_PLUS, i))
+		} else if currentChar == COLON {
+			token = append(token, createToken(COLON, TOKENNAME_COLON, i))
 		} else if currentChar == MINUS {
 			token = append(token, createToken(MINUS, TOKENNAME_MINUS, i))
 		} else if currentChar == MUL {
@@ -120,15 +125,8 @@ func lexer(value string) {
 		}
 	}
 
-	// Appending token struct to token array
-	//token = append(token, createToken(STRING, "sa", 12))
-	Use(space)
-	Use(stringOpened)
-	Use(token)
-	Use(currentChar)
-
-	//i := 0;
-	//for i = 0; i < len(token); i++ {
-	//	fmt.Println(colorYellow + token[i].Type + colorReset + ":" + colorPurple + token[i].Value + colorReset);
-	//}
+	i := 0;
+	for i = 0; i < len(token); i++ {
+		fmt.Println(colorYellow + token[i].Type + colorReset + ":" + colorPurple + token[i].Value + colorReset);
+	}
 }

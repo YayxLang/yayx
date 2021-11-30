@@ -18,7 +18,7 @@ func main() {
 				fileExists := file_exists(argv[2])
 
 				if fileExists == true {
-					interpreter_run(argv[2])
+					readFile(argv[2])
 				} else {
 					ece(ERROR_FILE_NOT_FOUND, SHELL_ERROR_TITLE)
 				}

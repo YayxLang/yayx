@@ -1,9 +1,8 @@
 package main
 
 import (
+	"bufio"
 	"errors"
-	"fmt"
-	"io/ioutil"
 	"os"
 	"strings"
 )
@@ -13,20 +12,66 @@ func file_exists(filename string) bool {
 	return !errors.Is(err, os.ErrNotExist)
 }
 
-func read_file(filename string) string {
-	f, err := ioutil.ReadFile(filename)
+// ====================================================================
+//
+// Old function of reading a file:
+//
+// ====================================================================
+//func readFile(filename string) string {
+//	f, err := ioutil.ReadFile(filename)
+//
+//	if err != nil {
+//		ece(FILE_ERROR_TITLE, ERROR_FILE_COULDNT_OPEN)
+//	}
+//
+//	valueFile := string(f)
+//	splitedValue := strings.Split(valueFile, "\n")
+//
+//	for i := 0; i < len(splitedValue); i++ {
+//		fmt.Printf(splitedValue[i])
+//	}
+//
+//
+//	return string(f)
+//}
+// ====================================================================
+
+func valueFileSplit(valueFile string) string {
+	var splited []string = strings.Split(valueFile, "\n")
+	var endVal string = ""
+
+	for i := 0; i < len(splited); i++ {
+		endVal = endVal + strings.ReplaceAll(splited[i], "\n", "") + " "
+	}
+
+	// ====================================================================
+	// Debug function
+	// ====================================================================
+	//for i := 0; i < len(splited); i++ {
+		//fmt.Printf(splited[i])
+	//}
+	// ====================================================================
+
+	return endVal
+}
+
+func readFile(filename string) {
+	file, err := os.Open(filename)
 
 	if err != nil {
 		ece(FILE_ERROR_TITLE, ERROR_FILE_COULDNT_OPEN)
 	}
+	defer file.Close()
 
-	valueFile := string(f)
-	splitedValue := strings.Split(valueFile, "\n")
+	scanner := bufio.NewScanner(file)
 
-	for i := 0; i < len(splitedValue); i++ {
-		fmt.Printf(splitedValue[i])
+	if err := scanner.Err(); err != nil {
+		ece(FILE_ERROR_TITLE, ERROR_FILE_COULDNT_OPEN)
 	}
 
+	for scanner.Scan() {
+		fileVal := valueFileSplit(scanner.Text())
 
-	return string(f)
+		interpreter_run(fileVal)
+	}
 }

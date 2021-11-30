@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="414fc72a-c922-4cdf-b224-bcb9b5f2afd3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/examples/operators.x" beforeDir="false" afterPath="$PROJECT_DIR$/examples/operators.x" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/identifers.x" beforeDir="false" afterPath="$PROJECT_DIR$/examples/identifers.x" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/main.x" beforeDir="false" afterPath="$PROJECT_DIR$/examples/main.x" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main-src/Yayx.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/main-src/Yayx.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main-src/file.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/main-src/file.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main-src/interpreter.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/main-src/interpreter.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main-src/lexer.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/main-src/lexer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main-src/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/main-src/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main-src/tokens.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/main-src/tokens.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +30,14 @@
   <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../../../Program Files/Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="21d6fiI2IyNfVQ8vestkI9HFtug" />
   <component name="ProjectViewState">
