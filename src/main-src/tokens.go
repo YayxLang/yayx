@@ -6,7 +6,7 @@ type Token struct {
 	LineColumn int    // Line of token
 }
 
-func createToken(Type string, Value string, LineColumn int) Token {
+func createToken(Value string, Type string, LineColumn int) Token {
 	var t Token
 
 	t.Type = Type
