@@ -46,7 +46,7 @@ true ( 1 )
 False data keyword = false
 
 Example =========================
-true ( 0 )
+false ( 0 )
 ==============================================
 If keyword = if
 
