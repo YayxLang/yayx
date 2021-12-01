@@ -12,6 +12,13 @@ Yayx programming language i will try to write a interpreter in GoLang
 - **std** -> A source code of std library
 - **examples** -> Example with Yayx Programming Language
 
+# Hello World in Yayx
+```
+fn main() {
+    println("Hi!")
+}
+```
+
 # Helped me
 - With writing the interpreter so help me [cpython repo](https://github.com/python/cpython) and [comet repo](https://github.com/chermehdi/comet)
 
