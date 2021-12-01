@@ -19,7 +19,7 @@ Yayx programming language is begginer friendly programming language. What have y
 # Hello World in Yayx
 ```kotlin
 fn main() {
-    println("Hi!")
+    println("Hello, World!")
 }
 ```
 
