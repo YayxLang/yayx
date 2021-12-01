@@ -15,7 +15,7 @@ Yayx programming language i will try to write a interpreter in GoLang
 # Hello World in Yayx
 ```kotlin
 fn main() {
-    println("Hi!")
+    println("Hello, World!")
 }
 ```
 
