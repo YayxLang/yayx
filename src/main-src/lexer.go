@@ -1,29 +1,27 @@
 package main
 
 import (
-	"fmt"
 	"strings"
 )
 
-func getLastToken(token [] Token) Token {
+func getLastToken(token []Token) Token {
 	returntoken := createToken(NIL, NIL, 0)
 
 	if len(token) == 0 {
 		returntoken = createToken(NIL, NIL, 0)
 	} else {
-		returntoken = token[len(token) - 1]
+		returntoken = token[len(token)-1]
 	}
 
 	return returntoken
 }
 
 // Lexer function
-func lexer(value string) {
+func lexer(value string) []Token {
 	var currentChar string = ""
-	var token [] Token
+	var token []Token
 	var space int = 0
 	var stringOpened int = 0
-
 	var splitedString = strings.Split(value, "")
 
 	for i := 0; i < len(splitedString); i++ {
@@ -39,7 +37,7 @@ func lexer(value string) {
 			}
 		} else if currentChar == " " {
 			if stringOpened == 1 {
-				token[len(token) - 1].Value += currentChar
+				token[len(token)-1].Value += currentChar
 			} else {
 				space = 1
 			}
@@ -47,19 +45,22 @@ func lexer(value string) {
 			if lastToken.Type == NIL {
 				token = append(token, createToken(currentChar, STRING, i))
 			} else {
-				token[len(token) - 1].Value += currentChar
+				token[len(token)-1].Value += currentChar
 			}
 		} else if strings.ContainsAny(CONSTANTS_LETTER, currentChar) {
 			if lastToken.Type == NIL {
 				token = append(token, createToken(currentChar, IDENTIFIER, i))
+				space = 0
 			} else {
 				// Space working
 				//fmt.Println(strconv.Itoa(space) + " | " + colorPurple + currentChar + colorReset)
 				if space == 0 {
 					if lastToken.Type == IDENTIFIER {
 						token[len(token)-1].Value += currentChar
+						space = 0
 					} else {
 						token = append(token, createToken(currentChar, IDENTIFIER, i))
+						space = 0
 					}
 				} else {
 					token = append(token, createToken(currentChar, IDENTIFIER, i))
@@ -70,12 +71,12 @@ func lexer(value string) {
 			if lastToken.Type == NIL {
 				token = append(token, createToken(currentChar, INT, i))
 			} else {
-				if token[len(token) - 1].Type == INT || token[len(token) - 1].Type == FLOAT {
-					if token[len(token) - 1].Type == INT {
-						token[len(token) - 1].Value += currentChar
+				if token[len(token)-1].Type == INT || token[len(token)-1].Type == FLOAT {
+					if token[len(token)-1].Type == INT {
+						token[len(token)-1].Value += currentChar
 					} else {
-						token[len(token) - 1].Type = FLOAT
-						token[len(token) - 1].Value += currentChar
+						token[len(token)-1].Type = FLOAT
+						token[len(token)-1].Value += currentChar
 					}
 				} else {
 					token = append(token, createToken(currentChar, INT, i))
@@ -105,28 +106,34 @@ func lexer(value string) {
 			if lastToken.Type == NIL {
 				token = append(token, createToken(currentChar, INT, i))
 			} else {
-				if token[len(token) - 1].Type == INT || token[len(token) - 1].Type == FLOAT {
-					if token[len(token) - 1].Type == INT {
-						token[len(token) - 1].Type = FLOAT
-						token[len(token) - 1].Value += currentChar
+				if token[len(token)-1].Type == INT || token[len(token)-1].Type == FLOAT {
+					if token[len(token)-1].Type == INT {
+						token[len(token)-1].Type = FLOAT
+						token[len(token)-1].Value += currentChar
 					} else {
-						if strings.ContainsAny(token[len(token) - 1].Value, ".") == true {
+						if strings.ContainsAny(token[len(token)-1].Value, ".") == true {
 							ece(ERROR_LEXER_FLOAT_DOT, LEXER_ERROR_TITLE)
 						}
-						token[len(token) - 1].Type = FLOAT
-						token[len(token) - 1].Value += currentChar
+						token[len(token)-1].Type = FLOAT
+						token[len(token)-1].Value += currentChar
 					}
 				} else {
-					token = append(token, createToken("0" + currentChar, INT, i))
+					token = append(token, createToken("0"+currentChar, INT, i))
 				}
 			}
-		} else if currentChar == SEMICOL {
-			token = append(token, createToken(SEMICOL, TOKENNAME_SEMICOL, i))
+		} else if currentChar == OPENPARENT {
+			token = append(token, createToken(OPENPARENT, TOKENNAME_OPENPARENT, i))
+		} else if currentChar == CLOSEPARENT {
+			token = append(token, createToken(CLOSEPARENT, TOKENNAME_CLOSEPARENT, i))
+		} else if currentChar == OPENBRACKET {
+			token = append(token, createToken(OPENBRACKET, TOKENNAME_OPENBRACKET, i))
+		} else if currentChar == CLOSEBRACKET {
+			token = append(token, createToken(CLOSEBRACKET, TOKENNAME_CLOSEBRACKET, i))
+		} else if currentChar == OPENBRACE {
+			token = append(token, createToken(OPENBRACE, TOKENNAME_OPENBRACE, i))
+		} else if currentChar == CLOSEBRACE {
+			token = append(token, createToken(CLOSEBRACE, TOKENNAME_CLOSEBRACE, i))
 		}
 	}
-
-	i := 0;
-	for i = 0; i < len(token); i++ {
-		fmt.Println(colorYellow + token[i].Type + colorReset + ":" + colorPurple + token[i].Value + colorReset);
-	}
+	return token
 }

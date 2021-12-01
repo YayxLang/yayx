@@ -21,7 +21,6 @@ vd print(string text) {
         inpc("printf(\"%(text)\")");
     } else {
         inpc("printf(\"%(text)\")");
-
     }
 }
 
