@@ -58,4 +58,12 @@ Else keyword = else
 Example =========================
 if (<CONDITION>) { } else { }
 ==============================================
+Comment: #
+
+Example =========================
+ # Comment #
+/\        /\
+Comment   Comment
+start     end
+==============================================
 ```
