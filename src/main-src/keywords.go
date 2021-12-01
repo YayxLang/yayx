@@ -9,4 +9,5 @@ const (
 	KEYWORD_FALSE    = "false"
 	KEYWORD_IF       = "if"
 	KEYWORD_ELSE     = "else"
+	KEYWORD_IMPORT   = "import"
 )

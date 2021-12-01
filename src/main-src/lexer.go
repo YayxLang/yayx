@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"strings"
 )
 
@@ -23,12 +24,21 @@ func lexer(value string) []Token {
 	var space int = 0
 	var stringOpened int = 0
 	var splitedString = strings.Split(value, "")
+	var commentOpended int = 0
 
 	for i := 0; i < len(splitedString); i++ {
 		currentChar = splitedString[i]
 		lastToken := getLastToken(token)
 
-		if currentChar == `"` {
+		if currentChar == "#" {
+			if commentOpended == 1 {
+				commentOpended = 0
+			} else {
+				commentOpended = 1
+			}
+		} else if commentOpended == 1 {
+			continue
+		} else if currentChar == `"` {
 			if stringOpened == 1 {
 				stringOpened = 0
 			} else {
@@ -135,5 +145,10 @@ func lexer(value string) []Token {
 			token = append(token, createToken(CLOSEBRACE, TOKENNAME_CLOSEBRACE, i))
 		}
 	}
+
+	for i := 0; i < len(token); i++ {
+		fmt.Println(token[i].Type + ":" + colorYellow + " " + token[i].Value + colorReset)
+	}
+
 	return token
 }

@@ -1,11 +1,10 @@
-use std;
-use sys;
+import std
 
-vd main() {
-    var isOpenSource = true;
+fn main() {
+    var isOpenSource = true
     if (isOpenSource == true) {
-        std:echo("Is open source")
+        println("Is open source")
     } else {
-        std:echo("Is not open source")
+        println("Is not open source")
     }
 }

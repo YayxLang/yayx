@@ -11,7 +11,7 @@ func parser(token []Token) {
 		if currentToken.Type == INT {
 
 		} else if currentToken.Type == IDENTIFIER {
-			if currentToken.Value == 
+
 		} else if currentToken.Type == STRING {
 
 		} else {
