@@ -3,7 +3,11 @@
 <img align="center" style="width: 128px" src="https://raw.githubusercontent.com/SolindekDev/yayx/main/website/img/yayx.png" alt="Yayx Logo">
 
 # Yayx
-Yayx programming language i will try to write a interpreter in GoLang
+Yayx programming language is begginer friendly programming language. What have yayx:
+- Easy syntax
+- Dynamic types
+- Can be compiled to outhers programming language (GoLang and C)
+- Clear documentation
 
 # Directory Tree
 - **src** -> Source code of our two interpreters more in [README](https://github.com/SolindekDev/yayx/tree/main/src)
