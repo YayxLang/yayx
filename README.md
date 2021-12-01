@@ -1,5 +1,6 @@
 
-<div style="text-align:center"><img src="https://raw.githubusercontent.com/SolindekDev/yayx/main/website/img/yayx.png" style="width: 128px"></div>
+<!-- <div style="text-align:center"><img src="https://raw.githubusercontent.com/SolindekDev/yayx/main/website/img/yayx.png" style="width: 128px"></div> -->
+<img align="center" style="width: 128px" src="https://raw.githubusercontent.com/SolindekDev/yayx/main/website/img/yayx.png" alt="Yayx Logo">
 
 # Yayx
 Yayx programming language i will try to write a interpreter in GoLang
