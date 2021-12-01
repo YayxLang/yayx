@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: rgb(28, 27, 32);
+    color: white;
+}
+
+header {
+    background-color: rgb(24, 23, 27);
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo span {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+header .logo {
+    padding: 0px 30px;
+}
+
+.nav_links ul {
+    list-style: none;
+}
+
+.nav_links {
+    padding: 0px 20px;
+}
+
+.nav_links ul li {
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav_links ul li:hover {
+    display: inline-block;
+    transform: translateY(-3px);
+}
+
+.nav_links ul li a {
+    padding: 0px 5px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav_links ul li a:hover {
+    padding: 0px 5px;
+    color: #D88FFF;
+    text-decoration: none;
+}
+
+.main {
+    background: #9A4889;
+    background: -webkit-linear-gradient(left, #9A4889, #D88FFF);
+    background: -moz-linear-gradient(left, #9A4889, #D88FFF);
+    background: linear-gradient(to right, #9A4889, #D88FFF);
+    text-align: center;
+    padding: 150px 30px;
+    /* width: 100%; */
+}
+
+@keyframes anim {
+    0% {
+        transform: translateY(-20px);
+    }
+    70% {
+        transform: translateY(-0px);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes animm {
+    0% {
+        transform: translateY(15px);
+    }
+    70% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(15px);
+    }
+}
+
+.main-logo-text {
+    font-size: 64px;
+    letter-spacing: 3px;
+    font-weight: 100;
+    text-shadow: 0px 13px 8px rgba(0,0,0,0.77);
+    animation: anim 7s linear infinite;
+}
+
+.main-logo-desc {
+    font-size: 20px;
+    font-weight: 300;
+    text-shadow: 0px 13px 8px rgba(0,0,0,0.77);
+}
+
+.main-logo-buttons button {
+    padding: 9px 28px;
+    font-size: 15px;
+    color: white;
+    border: none !important;
+    border-radius: 24px !important;
+    background-color: #940377;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.main-logo-buttons button:hover {
+    transform: translateY(-5px);
+    background-color: #bb0096;
+}
+
+a {
+    text-decoration: none;
+}
+
+.easy {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 60px 290px;
+}
+
+.title-easy-s {
+    font-size: 64px;
+    letter-spacing: 3px;
+    font-weight: 100;
+    text-shadow: 0px 13px 8px rgba(0,0,0,0.77);
+    /* animation: animm 8s linear infinite; */
+    padding: 0;
+    margin: 0;
+    transform: translateY(20px);
+}
+
+.desc-easy {
+    font-size: 20px;
+    font-weight: 300;
+    text-shadow: 0px 13px 8px rgba(0,0,0,0.77);
+}
+
+.title {
+    text-align: center;
+    font-size: 64px;
+    letter-spacing: 3px;
+    font-weight: 100;
+    text-shadow: 0px 13px 8px rgba(0,0,0,0.77);
+    /* animation: animm 8s linear infinite; */
+    padding: 0;
+    margin: 0;
+    transform: translateY(20px);
+}
+
+.codeblock {
+    background-color: #131216;
+    padding: 20px 20px;
+    min-width: 30%;
+    border-radius: 24px;
+    box-shadow: 0px 13px 50px rgba(0, 0, 0, 0.472);
+    -webkit-box-shadow: -2px 2px 0px 0px #D88FFF; 
+    box-shadow: -2px 2px 0px 0px #D88FFF;
+}
+
+code {
+    font-family: 'Courier Prime', monospace !important;
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+}
+
+.keyword {
+    color: brown;
+    font-family: 'Courier Prime', monospace !important;
+}
+
+.function {
+    color: rgb(42, 95, 165);
+    font-family: 'Courier Prime', monospace !important;
+}
+
+.std {
+    color: rgb(102, 79, 202);
+    font-family: 'Courier Prime', monospace !important;
+}
+
+.string {
+    color: rgb(100, 237, 118);
+    font-family: 'Courier Prime', monospace !important;
+}
+
+.features {
+    padding: 60px 0px;
+    font-family: 'Courier Prime', monospace !important;
+}
+
+.var {
+    color: orange;
+    font-family: 'Courier Prime', monospace !important;
+}
+
+a {
+    color: #D88FFF;
+}
+
+a:hover {
+    color: #bf49ff;
+}
