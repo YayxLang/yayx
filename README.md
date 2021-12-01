@@ -13,7 +13,7 @@ Yayx programming language i will try to write a interpreter in GoLang
 - **examples** -> Example with Yayx Programming Language
 
 # Hello World in Yayx
-```
+```kotlin
 fn main() {
     println("Hi!")
 }
