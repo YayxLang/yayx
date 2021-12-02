@@ -5,10 +5,12 @@
     padding: 0;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
+    color: white !important;
+    text-decoration: none !important;
 }
 
 body {
-    background-color: rgb(28, 27, 32);
+    background-color: rgb(28, 27, 32) !important;
     color: white;
 }
 
@@ -182,22 +184,22 @@ code {
 }
 
 .keyword {
-    color: brown;
+    color: brown !important;
     font-family: 'Courier Prime', monospace !important;
 }
 
 .function {
-    color: rgb(42, 95, 165);
+    color: rgb(42, 95, 165) !important;
     font-family: 'Courier Prime', monospace !important;
 }
 
 .std {
-    color: rgb(102, 79, 202);
+    color: rgb(102, 79, 202) !important;
     font-family: 'Courier Prime', monospace !important;
 }
 
 .string {
-    color: rgb(100, 237, 118);
+    color: rgb(100, 237, 118) !important;
     font-family: 'Courier Prime', monospace !important;
 }
 
@@ -206,15 +208,101 @@ code {
     font-family: 'Courier Prime', monospace !important;
 }
 
-.var {
-    color: orange;
+.var { 
+    color: orange !important;
     font-family: 'Courier Prime', monospace !important;
 }
 
 a {
-    color: #D88FFF;
+    color: #D88FFF !important;
 }
 
 a:hover {
+    color: #bf49ff !important;
+}
+
+
+.authors-title {
+    background-color: #D88FFF;
+    padding: 30px 300px 30px 300px;
+    transform: translateY(-10px);
+    text-align: center;
+}
+
+.download {
+    text-align: center;
+}
+
+.authors {
+    background-color: #D88FFF;
+    padding: 10px 300px;
+    transform: translateY(-10px);
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.authors img {
+    width: 220px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    transform: translateY(20px);
+}
+
+.authors img:hover {
+    width: 220px;
+    border-radius: 45%;
+    transform: scale(1.05);
+}
+
+.authors .author-name {
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+}
+
+.authors .author-desc {
+    font-size: 17px;
+    font-weight: 200;
+    color: white;
+}
+
+.socials {
+    margin-top: 10px;
+}
+
+.socials svg {
+    margin: 0px 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    color: white;
+}
+
+.socials svg:hover {
+    margin: 0px 5px;
+    cursor: pointer;
+    transform: translateY(-3px);
+}
+
+footer {
+    background-color: rgb(16, 16, 19) !important;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titleFooter {
+    position: relative;
     color: #bf49ff;
+    font-weight: 500;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.links p {
+    border-bottom: #bf49ff solid 1px;
+    width: 50px;
 }
