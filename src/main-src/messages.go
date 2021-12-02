@@ -23,6 +23,7 @@ const (
 	ERROR_LEXER_PARENTS_OPENDED  = "Parents ('(') opened but not closed"
 	ERROR_LEXER_BRACE_OPENDED    = "Brace ('{') opened but not closed"
 	ERROR_LEXER_BRACKETS_OPENDED = "Brackets ('[') opened but not closed"
+	ERROR_LEXER_UNKNOWN_CHAR     = "Unknow Character ("
 
 	// Command Messages
 	HELP_MESSAGE    = "=--=--=--=--=--=--=[ HELP ]=--=--=--=--=--=--=\n*\n"

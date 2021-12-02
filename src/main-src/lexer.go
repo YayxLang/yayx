@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -161,22 +160,24 @@ func lexer(value string) []Token {
 			braceOpened = 1
 			token = append(token, createToken(OPENBRACE, TOKENNAME_OPENBRACE, i))
 		} else if currentChar == CLOSEBRACE {
-			braceOpened = 1
+			braceOpened = 0
 			token = append(token, createToken(CLOSEBRACE, TOKENNAME_CLOSEBRACE, i))
+		} else {
+			ece(ERROR_LEXER_UNKNOWN_CHAR+currentChar+")", LEXER_ERROR_TITLE)
 		}
 	}
 
 	if parentsOpened == 1 {
-
+		ece(ERROR_LEXER_PARENTS_OPENDED, LEXER_ERROR_TITLE)
 	} else if braceOpened == 1 {
-
+		ece(ERROR_LEXER_BRACE_OPENDED, LEXER_ERROR_TITLE)
 	} else if bracketsOpened == 1 {
-
+		ece(ERROR_LEXER_BRACKETS_OPENDED, LEXER_ERROR_TITLE)
 	}
 
-	for i := 0; i < len(token); i++ {
-		fmt.Println(token[i].Type + ":" + colorYellow + " " + token[i].Value + colorReset)
-	}
+	// for i := 0; i < len(token); i++ {
+	// 	fmt.Println(token[i].Type + ":" + colorYellow + " " + token[i].Value + colorReset)
+	// }
 
 	return token
 }
