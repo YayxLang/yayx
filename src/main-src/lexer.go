@@ -25,16 +25,30 @@ func lexer(value string) []Token {
 	var stringOpened int = 0
 	var splitedString = strings.Split(value, "")
 	var commentOpended int = 0
+	// (
+	var parentsOpened int = 0
+	// [
+	var bracketsOpened int = 0
+	// {
+	var braceOpened int = 0
 
 	for i := 0; i < len(splitedString); i++ {
 		currentChar = splitedString[i]
 		lastToken := getLastToken(token)
 
 		if currentChar == "#" {
-			if commentOpended == 1 {
-				commentOpended = 0
+			if stringOpened == 1 {
+				if lastToken.Type == NIL {
+					token = append(token, createToken(currentChar, STRING, i))
+				} else {
+					token[len(token)-1].Value += currentChar
+				}
 			} else {
-				commentOpended = 1
+				if commentOpended == 1 {
+					commentOpended = 0
+				} else {
+					commentOpended = 1
+				}
 			}
 		} else if commentOpended == 1 {
 			continue
@@ -132,18 +146,32 @@ func lexer(value string) []Token {
 				}
 			}
 		} else if currentChar == OPENPARENT {
+			parentsOpened = 1
 			token = append(token, createToken(OPENPARENT, TOKENNAME_OPENPARENT, i))
 		} else if currentChar == CLOSEPARENT {
+			parentsOpened = 0
 			token = append(token, createToken(CLOSEPARENT, TOKENNAME_CLOSEPARENT, i))
 		} else if currentChar == OPENBRACKET {
+			bracketsOpened = 1
 			token = append(token, createToken(OPENBRACKET, TOKENNAME_OPENBRACKET, i))
 		} else if currentChar == CLOSEBRACKET {
+			bracketsOpened = 0
 			token = append(token, createToken(CLOSEBRACKET, TOKENNAME_CLOSEBRACKET, i))
 		} else if currentChar == OPENBRACE {
+			braceOpened = 1
 			token = append(token, createToken(OPENBRACE, TOKENNAME_OPENBRACE, i))
 		} else if currentChar == CLOSEBRACE {
+			braceOpened = 1
 			token = append(token, createToken(CLOSEBRACE, TOKENNAME_CLOSEBRACE, i))
 		}
+	}
+
+	if parentsOpened == 1 {
+
+	} else if braceOpened == 1 {
+
+	} else if bracketsOpened == 1 {
+
 	}
 
 	for i := 0; i < len(token); i++ {

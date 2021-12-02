@@ -15,11 +15,14 @@ const (
 	PARSER_ERROR_TITLE      = "ParserError"
 
 	// Message of errors
-	ERROR_ARGS_MESSAGE          = "Invalid arguments..."
-	ERROR_ARGS_MESSAGE_FILENAME = "Invalid arguments... To run file must be given a filename"
-	ERROR_FILE_NOT_FOUND        = "File not found!!!"
-	ERROR_FILE_COULDNT_OPEN     = "File could not be open!!!"
-	ERROR_LEXER_FLOAT_DOT       = "Float has already '.' inside of it!"
+	ERROR_ARGS_MESSAGE           = "Invalid arguments..."
+	ERROR_ARGS_MESSAGE_FILENAME  = "Invalid arguments... To run file must be given a filename"
+	ERROR_FILE_NOT_FOUND         = "File not found!!!"
+	ERROR_FILE_COULDNT_OPEN      = "File could not be open!!!"
+	ERROR_LEXER_FLOAT_DOT        = "Float has already '.' inside of it!"
+	ERROR_LEXER_PARENTS_OPENDED  = "Parents ('(') opened but not closed"
+	ERROR_LEXER_BRACE_OPENDED    = "Brace ('{') opened but not closed"
+	ERROR_LEXER_BRACKETS_OPENDED = "Brackets ('[') opened but not closed"
 
 	// Command Messages
 	HELP_MESSAGE    = "=--=--=--=--=--=--=[ HELP ]=--=--=--=--=--=--=\n*\n"
