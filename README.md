@@ -3,6 +3,7 @@
 <img align="center" style="width: 128px" src="https://avatars.githubusercontent.com/u/95468331?s=200&v=4" alt="Yayx Logo">
 
 ![](https://shields.io/github/languages/top/YayxLang/yayx)
+![](https://img.shields.io/github/directory-file-count/yayxlang/yayx)
 
 # Yayx
 Yayx programming language is begginer friendly programming language. What have yayx:
