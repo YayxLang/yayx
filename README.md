@@ -2,6 +2,8 @@
 <!-- <div style="text-align:center"><img src="https://raw.githubusercontent.com/SolindekDev/yayx/main/website/img/yayx.png" style="width: 128px"></div> -->
 <img align="center" style="width: 128px" src="https://raw.githubusercontent.com/SolindekDev/yayx/main/website/img/yayx.png" alt="Yayx Logo">
 
+![](https://shields.io/github/languages/top/YayxLang/yayx)
+
 # Yayx
 Yayx programming language is begginer friendly programming language. What have yayx:
 - Easy syntax
