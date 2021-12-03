@@ -1,6 +1,6 @@
 
 <!-- <div style="text-align:center"><img src="https://raw.githubusercontent.com/SolindekDev/yayx/main/website/img/yayx.png" style="width: 128px"></div> -->
-<img align="center" style="width: 128px" src="https://raw.githubusercontent.com/SolindekDev/yayx/main/website/img/yayx.png" alt="Yayx Logo">
+<img align="center" style="width: 128px" src="https://avatars.githubusercontent.com/u/95468331?s=200&v=4" alt="Yayx Logo">
 
 # Yayx
 Yayx programming language is begginer friendly programming language. What have yayx:
