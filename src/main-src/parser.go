@@ -5,6 +5,18 @@ import (
 	"strconv"
 )
 
+func getLastTokenAST(actions []Action) Action {
+	returntoken := createAction(NIL, ]NIL])
+
+	if len(actions) == 0 {
+		returntoken = createAction(NIL, NIL)
+	} else {
+		returntoken = actions[len(actions)-1]
+	}
+
+	return returntoken
+}
+
 func parser(token []Token) {
 	// for i := 0; i < len(token); i++ {
 	// 	fmt.Println(token[i].Type + ":" + colorYellow + " " + token[i].Value + colorReset)
@@ -27,7 +39,7 @@ func parser(token []Token) {
 
 		if currentToken.Type == INT {
 			if mathematicalOperationOpen == 1 {
-				
+
 			} else {
 
 			}
