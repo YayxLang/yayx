@@ -173,6 +173,8 @@ func lexer(value string) []Token {
 		ece(ERROR_LEXER_BRACE_OPENDED, LEXER_ERROR_TITLE)
 	} else if bracketsOpened == 1 {
 		ece(ERROR_LEXER_BRACKETS_OPENDED, LEXER_ERROR_TITLE)
+	} else if stringOpened == 1 {
+		ece("String started but not ended", LEXER_ERROR_TITLE)
 	}
 
 	// for i := 0; i < len(token); i++ {

@@ -10,4 +10,5 @@ const (
 	KEYWORD_IF       = "if"
 	KEYWORD_ELSE     = "else"
 	KEYWORD_IMPORT   = "import"
+	KEYWORD_INPCODE  = "inpcode" // This function will be input golang code
 )
