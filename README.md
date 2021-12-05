@@ -6,18 +6,18 @@
 ![](https://img.shields.io/github/directory-file-count/yayxlang/yayx)
 
 # Yayx
-Yayx programming language is begginer friendly programming language. What have yayx:
+Yayx programming language is begginer friendly programming language. Yayx have:
 - Easy syntax
 - Dynamic types
-- Can be compiled to outhers programming language (GoLang and C)
+- Compiler to outhers programming language (GoLang and C)
 - Clear documentation
 
 # Directory Tree
-- **src** -> Source code of our two interpreters more in [README](https://github.com/SolindekDev/yayx/tree/main/src)
+- **src** -> Source code of our two interpreters, read more in [README](https://github.com/SolindekDev/yayx/tree/main/src)
 - **.vscode** -> Files for visual studio code 
-- **builder** -> A little builder of interpreter (soon update)
-- **std** -> A source code of std library
-- **examples** -> Example with Yayx Programming Language
+- **builder** -> Builder of interpreter (update soon)
+- **std** -> Source code of std library
+- **examples** -> Examples for Yayx Programming Language
 
 # Hello World in Yayx
 ```kotlin
@@ -26,8 +26,8 @@ fn main() {
 }
 ```
 
-# Helped me
-- With writing the interpreter so help me [cpython repo](https://github.com/python/cpython) and [comet repo](https://github.com/chermehdi/comet)
+# Special thanks to
+- [cpython repo](https://github.com/python/cpython) and [comet repo](https://github.com/chermehdi/comet)
 
 # Keywords
 ```
