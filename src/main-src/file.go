@@ -76,7 +76,6 @@ func readFile(filename string) {
 
 	for scanner.Scan() {
 		// fileVal := valueFileSplit(scanner.Text())
-
 		fileVal += scanner.Text()
 	}
 	interpreter_run(fileVal)

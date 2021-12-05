@@ -103,7 +103,12 @@ func lexer(value string) []Token {
 						token[len(token)-1].Value += currentChar
 					}
 				} else {
-					token = append(token, createToken(currentChar, INT, i))
+					if token[len(token)-1].Type == IDENTIFIER && space == 0 {
+						token[len(token)-1].Type = IDENTIFIER
+						token[len(token)-1].Value += currentChar
+					} else {
+						token = append(token, createToken(currentChar, INT, i))
+					}
 				}
 			}
 		} else if currentChar == PLUS {
@@ -168,15 +173,15 @@ func lexer(value string) []Token {
 		}
 	}
 
-	// if parentsOpened == 1 {
-	// 	ece(ERROR_LEXER_PARENTS_OPENDED, LEXER_ERROR_TITLE)
-	// } else if braceOpened == 1 {
-	// 	ece(ERROR_LEXER_BRACE_OPENDED, LEXER_ERROR_TITLE)
-	// } else if bracketsOpened == 1 {
-	// 	ece(ERROR_LEXER_BRACKETS_OPENDED, LEXER_ERROR_TITLE)
-	// } else if stringOpened == 1 {
-	// 	ece("String started but not ended", LEXER_ERROR_TITLE)
-	// }
+	if parentsOpened == 1 {
+		ece(ERROR_LEXER_PARENTS_OPENDED, LEXER_ERROR_TITLE)
+	} else if braceOpened == 1 {
+		ece(ERROR_LEXER_BRACE_OPENDED, LEXER_ERROR_TITLE)
+	} else if bracketsOpened == 1 {
+		ece(ERROR_LEXER_BRACKETS_OPENDED, LEXER_ERROR_TITLE)
+	} else if stringOpened == 1 {
+		ece("String started but not ended", LEXER_ERROR_TITLE)
+	}
 
 	for i := 0; i < len(token); i++ {
 		fmt.Println(token[i].Type + ":" + colorYellow + " " + token[i].Value + colorReset)

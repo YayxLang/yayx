@@ -1,3 +1,3 @@
 main:
 	@go build
-	@./Yayx.exe run ..\..\examples\if.x
+	@./Yayx.exe run ..\..\examples\functions.x
