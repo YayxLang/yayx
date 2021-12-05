@@ -18,10 +18,12 @@ func getLastTokenAST(actions []Action) Action {
 }
 
 var (
-	tokenAST                        []Action
-	functionBracketsExpectation     int = 0
-	functionNameExpectation         int = 0
-	functionCloseBracketExpectation int = 0
+	tokenAST                       []Action
+	functionParentExpectation      int = 0
+	functionNameExpectation        int = 0
+	functionCloseParentExpectation int = 0
+	functionOpenBraceExpectation   int = 0
+	functionCloseBraceExpectation  int = 0
 )
 
 func parser(token []Token) {
@@ -39,23 +41,33 @@ func parser(token []Token) {
 		lastTokenAST := getLastTokenAST(tokenAST)
 		Use(lastTokenAST)
 
-		if functionCloseBracketExpectation == 1 {
-			// if currentToken.Type == CLOSEBRACKET
+		if functionOpenBraceExpectation == 1 {
+			if currentToken.Value == OPENBRACE {
+				functionOpenBraceExpectation = 0
+				functionCloseBraceExpectation = 1
+			} else {
+				ece("Expected "+OPENBRACE+" but found "+currentToken.Type, PARSER_ERROR_TITLE)
+			}
+		} else if functionCloseParentExpectation == 1 {
+			if currentToken.Value == CLOSEPARENT {
+				functionCloseParentExpectation = 0
+				functionOpenBraceExpectation = 1
+			} else {
+				ece("Expected "+CLOSEPARENT+" but found "+currentToken.Type, PARSER_ERROR_TITLE)
+			}
 		} else if functionNameExpectation == 1 {
 			if currentToken.Type == IDENTIFIER {
-				functionBracketsExpectation = 1
+				functionParentExpectation = 1
 				functionNameExpectation = 0
 			} else {
 				ece("Name of function must be type "+IDENTIFIER+" not "+currentToken.Type, PARSER_ERROR_TITLE)
 			}
-		} else if functionBracketsExpectation == 1 {
-			fmt.Println(currentToken.Type)
-			fmt.Println(currentToken.Value)
-			if currentToken.Value == OPENBRACKET {
-				functionBracketsExpectation = 0
-				functionCloseBracketExpectation = 1
+		} else if functionParentExpectation == 1 {
+			if currentToken.Value == OPENPARENT {
+				functionParentExpectation = 0
+				functionCloseParentExpectation = 1
 			} else {
-				ece("Expected "+OPENPARENT+" but found "+currentToken.Type, PARSER_ERROR_TITLE)
+				ece("Expected "+OPENPARENT+" but found "+currentToken.Value, PARSER_ERROR_TITLE)
 			}
 		} else if currentToken.Type == INT {
 
@@ -86,13 +98,25 @@ func parser(token []Token) {
 		} else if currentToken.Type == STRING {
 
 		} else {
-
+			if currentToken.Type == TOKENNAME_CLOSEBRACE {
+				if functionCloseBraceExpectation == 1 {
+					functionCloseBraceExpectation = 0
+				}
+			}
 		}
 		Use(nextToken)
 	}
 
 	if functionNameExpectation == 1 {
 		ece("Expected function name!", PARSER_ERROR_TITLE)
+	} else if functionCloseBraceExpectation == 1 {
+		ece("Expected function close brace! "+CLOSEBRACE, PARSER_ERROR_TITLE)
+	} else if functionParentExpectation == 1 {
+		ece("Expected function open parent! "+OPENPARENT, PARSER_ERROR_TITLE)
+	} else if functionOpenBraceExpectation == 1 {
+		ece("Expected function open brace! "+OPENBRACE, PARSER_ERROR_TITLE)
+	} else if functionCloseParentExpectation == 1 {
+		ece("Expected function close parent! "+CLOSEPARENT, PARSER_ERROR_TITLE)
 	}
 
 	for i := 0; i < len(tokenAST); i++ {

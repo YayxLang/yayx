@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"strings"
 )
 
@@ -16,6 +17,12 @@ func getLastToken(token []Token) Token {
 	return returntoken
 }
 
+var (
+	parentsOpened  int = 0
+	bracketsOpened int = 0
+	braceOpened    int = 0
+)
+
 // Lexer function
 func lexer(value string) []Token {
 	var currentChar string = ""
@@ -24,12 +31,6 @@ func lexer(value string) []Token {
 	var stringOpened int = 0
 	var splitedString = strings.Split(value, "")
 	var commentOpended int = 0
-	// (
-	var parentsOpened int = 0
-	// [
-	var bracketsOpened int = 0
-	// {
-	var braceOpened int = 0
 
 	for i := 0; i < len(splitedString); i++ {
 		currentChar = splitedString[i]
@@ -167,19 +168,19 @@ func lexer(value string) []Token {
 		}
 	}
 
-	if parentsOpened == 1 {
-		ece(ERROR_LEXER_PARENTS_OPENDED, LEXER_ERROR_TITLE)
-	} else if braceOpened == 1 {
-		ece(ERROR_LEXER_BRACE_OPENDED, LEXER_ERROR_TITLE)
-	} else if bracketsOpened == 1 {
-		ece(ERROR_LEXER_BRACKETS_OPENDED, LEXER_ERROR_TITLE)
-	} else if stringOpened == 1 {
-		ece("String started but not ended", LEXER_ERROR_TITLE)
-	}
-
-	// for i := 0; i < len(token); i++ {
-	// 	fmt.Println(token[i].Type + ":" + colorYellow + " " + token[i].Value + colorReset)
+	// if parentsOpened == 1 {
+	// 	ece(ERROR_LEXER_PARENTS_OPENDED, LEXER_ERROR_TITLE)
+	// } else if braceOpened == 1 {
+	// 	ece(ERROR_LEXER_BRACE_OPENDED, LEXER_ERROR_TITLE)
+	// } else if bracketsOpened == 1 {
+	// 	ece(ERROR_LEXER_BRACKETS_OPENDED, LEXER_ERROR_TITLE)
+	// } else if stringOpened == 1 {
+	// 	ece("String started but not ended", LEXER_ERROR_TITLE)
 	// }
+
+	for i := 0; i < len(token); i++ {
+		fmt.Println(token[i].Type + ":" + colorYellow + " " + token[i].Value + colorReset)
+	}
 
 	return token
 }

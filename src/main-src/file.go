@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"errors"
 	"os"
-	"strings"
 )
 
 func file_exists(filename string) bool {
@@ -36,24 +35,28 @@ func file_exists(filename string) bool {
 //}
 // ====================================================================
 
-func valueFileSplit(valueFile string) string {
-	var splited []string = strings.Split(valueFile, "\n")
-	var endVal string = ""
+// func valueFileSplit(valueFile string) string {
+// 	var splited []string = strings.Split(valueFile, "\n")
+// 	var endVal string = ""
 
-	for i := 0; i < len(splited); i++ {
-		endVal = endVal + strings.ReplaceAll(splited[i], "\n", "") + " "
-	}
+// 	for i := 0; i < len(splited); i++ {
+// 		endVal = endVal + strings.ReplaceAll(splited[i], "\n", "") + " "
+// 	}
 
-	// ====================================================================
-	// Debug function
-	// ====================================================================
-	//for i := 0; i < len(splited); i++ {
-		//fmt.Printf(splited[i])
-	//}
-	// ====================================================================
+// 	// ====================================================================
+// 	// Debug function
+// 	// ====================================================================
+// 	//for i := 0; i < len(splited); i++ {
+// 	//fmt.Printf(splited[i])
+// 	//}
+// 	// ====================================================================
 
-	return endVal
-}
+// 	return endVal
+// }
+
+var (
+	fileVal string
+)
 
 func readFile(filename string) {
 	file, err := os.Open(filename)
@@ -64,14 +67,17 @@ func readFile(filename string) {
 	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
+	buf := make([]byte, 0, 64*1024)
+	scanner.Buffer(buf, 1024*1024)
 
 	if err := scanner.Err(); err != nil {
 		ece(FILE_ERROR_TITLE, ERROR_FILE_COULDNT_OPEN)
 	}
 
 	for scanner.Scan() {
-		fileVal := valueFileSplit(scanner.Text())
+		// fileVal := valueFileSplit(scanner.Text())
 
-		interpreter_run(fileVal)
+		fileVal += scanner.Text()
 	}
+	interpreter_run(fileVal)
 }

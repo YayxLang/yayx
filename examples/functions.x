@@ -1,3 +1,5 @@
-# Testing functions in Parser #
+# Function testing for parser #
 
-fn main ()
+fn main() {
+    println("s")
+}

@@ -1,5 +1,3 @@
-import std
-
 fn main() {
     var isOpenSource = true
     if (isOpenSource == true) {
