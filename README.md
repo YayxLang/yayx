@@ -19,6 +19,17 @@ Yayx programming language is begginer friendly programming language. Yayx have:
 - **std** -> Source code of std library
 - **examples** -> Examples for Yayx Programming Language
 
+# ToDo
+[x] Lexer
+[ ] End parser
+[ ] Create translator
+[ ] Add args in function
+[ ] Shell (like python shell)
+[ ] Create website
+[ ] Create documentation
+[ ] Create std library
+[ ] Create file library
+
 # Hello World in Yayx
 ```kotlin
 fn main() {
